@@ -14,16 +14,16 @@ namespace ReneLinkedLists
 
         }
 
-        public void AddToEnd(SinglyLinkedNode<T> node, T itemToAdd)
+        public void AddToEnd(T itemToAdd)
         {
-            if (node.Next == null)
+            var node = Head;
+
+            while(node.Next != null)
             {
-                node.AddAfter(itemToAdd);
+                node = node.Next;
             }
-            else
-            {
-                AddToEnd(node.Next, itemToAdd);
-            }
+
+            node.Next = new SinglyLinkedNode<T>(itemToAdd);
         }
 
         public void AddToFront(T itemToAdd)
@@ -82,6 +82,24 @@ namespace ReneLinkedLists
             count++;
             var node = Head;
             while(node.Next != null)
+            {
+                count++;
+                node = node.Next;
+            }
+
+            return count;
+        }
+
+        public int Length()
+        {
+            var node = Head;
+            if(node == null)
+            {
+                return 0;
+            }
+            int count = 0;
+
+            while (node != null)
             {
                 count++;
                 node = node.Next;
