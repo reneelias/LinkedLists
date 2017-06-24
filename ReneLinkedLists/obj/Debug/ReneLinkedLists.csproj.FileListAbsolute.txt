@@ -1,1 +1,2 @@
 c:\users\visitordl8\documents\visual studio 2015\Projects\ReneLinkedLists\ReneLinkedLists\bin\Debug\ReneLinkedLists.exe.config
+C:\Users\VisitorDL8\Documents\GitHub\LinkedLists\ReneLinkedLists\bin\Debug\ReneLinkedLists.exe.config
