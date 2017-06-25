@@ -9,6 +9,8 @@ namespace ReneLinkedLists
     public class SinglyLinkedList<T>
     {
         public SinglyLinkedNode<T> Head { get; set; }
+        public int Count { get { return Length(); } }
+
         public SinglyLinkedList()
         {
 
@@ -17,13 +19,19 @@ namespace ReneLinkedLists
         public void AddToEnd(T itemToAdd)
         {
             var node = Head;
-
-            while(node.Next != null)
+            if (node == null)
             {
-                node = node.Next;
+                Head = new SinglyLinkedNode<T>(itemToAdd);
             }
+            else
+            {
+                while (node.Next != null)
+                {
+                    node = node.Next;
+                }
 
-            node.Next = new SinglyLinkedNode<T>(itemToAdd);
+                node.Next = new SinglyLinkedNode<T>(itemToAdd);
+            }
         }
 
         public void AddToFront(T itemToAdd)
@@ -38,17 +46,23 @@ namespace ReneLinkedLists
             {
                 throw new InvalidOperationException("Cannot remove a node from a null list");
             }
-
-            var tempNode = Head;
-            var nextTempNode = Head.Next;
-
-            while (nextTempNode != null)
+            if (Head.Next == null)
             {
-                tempNode = nextTempNode;
-                nextTempNode = nextTempNode.Next;
+                Head = null;
             }
+            else
+            {
+                var tempNode = Head;
+                var nextTempNode = Head.Next;
 
-            tempNode.Next = null;
+                while (nextTempNode.Next != null)
+                {
+                    tempNode = nextTempNode;
+                    nextTempNode = nextTempNode.Next;
+                }
+
+                tempNode.Next = null;
+            }
         }
 
         public void RemoveFromFront()
@@ -71,35 +85,17 @@ namespace ReneLinkedLists
             return Head == null;
         }
 
-        public int Count()
+        private int Length()
         {
             int count = 0;
-            if(IsEmpty())
+            if (IsEmpty())
             {
                 return count;
             }
 
             count++;
             var node = Head;
-            while(node.Next != null)
-            {
-                count++;
-                node = node.Next;
-            }
-
-            return count;
-        }
-
-        public int Length()
-        {
-            var node = Head;
-            if(node == null)
-            {
-                return 0;
-            }
-            int count = 0;
-
-            while (node != null)
+            while (node.Next != null)
             {
                 count++;
                 node = node.Next;

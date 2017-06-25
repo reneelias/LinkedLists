@@ -13,13 +13,16 @@ namespace ReneLinkedLists
             SinglyLinkedList<int> list = new SinglyLinkedList<int>();
 
             int answer;
-            while (true)
+            bool cont = true;
+            while (cont)
             {
                 Console.WriteLine("What would you like to do?");
-                Console.WriteLine("1) Add new item to end of list. 2) Add new item to front of list. 3) Remove item from end. 4) Remove item from front.");
-                Console.WriteLine("5) Remove item at specified index position. 6) View list items");
+                Console.WriteLine("1) Add new item to end of list. 2) Add new item to front of list.\n3) Remove item from end. 4) Remove item from front.");
+                Console.WriteLine("5) Remove item at specified index position. 6) View list items\n7) Exit");
 
                 answer = int.Parse(Console.ReadLine());
+                //Console.SetCursorPosition(0, Console.CursorTop - 1);
+                //Console.Write(" \n");
 
                 switch (answer)
                 {
@@ -51,10 +54,17 @@ namespace ReneLinkedLists
                         }
                     case 6:
                         {
+                            DisplayList(list);
+                            break;
+                        }
+                    case 7:
+                        {
+                            cont = false;
                             break;
                         }
                 }
 
+                Console.WriteLine();
             }
         }
 
@@ -79,7 +89,25 @@ namespace ReneLinkedLists
             Console.WriteLine("What number item would you like to remove?");
             int index = int.Parse(Console.ReadLine());
 
-            list.RemoveAt(index);
+            list.RemoveAt(index - 1);
+        }
+
+        static void DisplayList(SinglyLinkedList<int> list)
+        {
+            if (list.Count == 0)
+            {
+                Console.WriteLine("List is empty.");
+            }
+            else
+            {
+                SinglyLinkedNode<int> node = list.Head;
+
+                for (int i = 0; i < list.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}) {node.Item}");
+                    node = node.Next;
+                }
+            }
         }
     }
 }

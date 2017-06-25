@@ -1,3 +1,9 @@
 c:\users\visitordl8\documents\visual studio 2015\Projects\ReneLinkedLists\ReneLinkedLists\bin\Debug\ReneLinkedLists.exe.config
 C:\Users\VisitorDL8\Documents\GitHub\LinkedLists\ReneLinkedLists\bin\Debug\ReneLinkedLists.exe.config
 C:\Users\GMRInstructor\Documents\GitHub\Rene\LinkedLists\ReneLinkedLists\bin\Debug\ReneLinkedLists.exe.config
+C:\Users\rene__000\Documents\GitHub\LinkedLists\ReneLinkedLists\bin\Debug\ReneLinkedLists.exe.config
+C:\Users\rene__000\Documents\GitHub\LinkedLists\ReneLinkedLists\bin\Debug\ReneLinkedLists.exe
+C:\Users\rene__000\Documents\GitHub\LinkedLists\ReneLinkedLists\bin\Debug\ReneLinkedLists.pdb
+C:\Users\rene__000\Documents\GitHub\LinkedLists\ReneLinkedLists\obj\Debug\ReneLinkedLists.csprojResolveAssemblyReference.cache
+C:\Users\rene__000\Documents\GitHub\LinkedLists\ReneLinkedLists\obj\Debug\ReneLinkedLists.exe
+C:\Users\rene__000\Documents\GitHub\LinkedLists\ReneLinkedLists\obj\Debug\ReneLinkedLists.pdb
